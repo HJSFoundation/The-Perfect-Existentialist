@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Conversation>
+  <Nodes>
+    <Node Start="true" ID="start">Hey there! I'm a bowl of Fruit!<Options>
+        <Option jumpTo="really">Really? I couldn't tell</Option>
+        <Option jumpTo="obviously">Well Obviously!</Option>
+        <Option jumpTo="don't care">I really just don't care right now</Option>
+        <Option jumpTo="talking">OMG TALKING FRUIT</Option>
+      </Options>
+    </Node>
+
+    <Node ID="really">Well That's programmer art for ya'<Options>
+        <Option jumpTo="end">I see. Well, Goodbye!</Option>
+      </Options>
+    </Node>
+    
+    <Node ID="obviously">I'm surprised! Most people can't tell.<Options>
+        <Option jumpTo="end">Well those people are fools! Goodbye.</Option>
+      </Options>
+    </Node>
+    
+    <Node ID="don't care">Yeah... that's the usual response.<Options>
+        <Option jumpTo="close">end</Option>
+      </Options>
+    </Node>
+    
+    <Node ID="talking">Are you really so surprised? This is just a test build anyway.<Options>
+        <Option jumpTo="end">Very true. Goodbye talking fruit!</Option>
+      </Options>
+    </Node>
+    
+    <Node ID="end">See ya' around buddy!<Options>
+        <Option jumpTo="close">end</Option>
+      </Options>
+    </Node>
+    
+    <Node End="true" ID="close">
+    </Node>
+  </Nodes>
+</Conversation>

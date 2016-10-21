@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Conversation>
+	<Nodes>
+		<Node Start="true" ID="start" freezePlayer="true">Ring... Ring... [The phone is ringing]<Options>
+				<Option jumpTo="pickItUp">Pick it up</Option>
+				<Option jumpTo="ignore">Ignore it</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="pickItUp">[The voice is on the other end]<Options>
+				<Option jumpTo="1">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="ignore">[You pick it up anyway]<Options>
+				<Option jumpTo="pickItUp">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="1">For your first stop on this existential trip, we would like you to consider this wooden bench.<Options>
+				<Option jumpTo="2" dataEdit="P" dataAddTo="1">Why is it significant?</Option>
+				<Option jumpTo="2refuse" dataEdit="S" dataAddTo="1">I refuse.</Option>
+				<Option jumpTo="2" dataEdit="G" dataAddTo="1">Yes. Okay. Considering on your command.</Option>
+				<Option jumpTo="2" dataEdit="M" dataAddTo="1">It's just a bench.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2refuse">Your refusal is not encouraging.<Options>
+				<Option jumpTo="2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2">Think of it! Some hundred year old tree cut down such that its bark may be arranged making it comfortable to sit on.<Options>
+				<Option jumpTo="3">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3">It is called a bench for no reason other than that thousands of years of linguistic changes have given such an object that name.<Options>
+				<Option jumpTo="4">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4">And for some arbitrary reason it is distinct from other objects of similar function: Chairs, seats, etc.<Options>
+				<Option jumpTo="5">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5">It makes perfect sense doesn't it?<Options>
+				<Option jumpTo="5question" dataEdit="P" dataAddTo="1">Not really. It seems absurd.</Option>
+				<Option jumpTo="5wit" dataEdit="S" dataAddTo="1">You just like hearing yourself talk, don't you?</Option>
+				<Option jumpTo="5yes" dataEdit="G" dataAddTo="1">Yes. Exactly as you say.</Option>
+				<Option jumpTo="5meh" dataEdit="M" dataAddTo="1">I could care less.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5question">No. It makes perfect sense. Stop questioning things.<Options>
+				<Option jumpTo="6">I question your wisdom, but okay.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5wit">I am afraid wit is not one of the attributes that makes a perfect existentialist.<Options>
+				<Option jumpTo="5end">Fine.</Option>
+				<Option jumpTo="5meh">I could care less.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5yes">I'm glad to hear your complacence in this matter.<Options>
+				<Option jumpTo="6">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5meh">I think you mean "I couldn't care less." To say you could care less implies that you DO care.<Options>
+				<Option jumpTo="5end">But is that distinction not also absurd?</Option>
+				<Option jumpTo="5end">True.</Option>
+				<Option jumpTo="5end">I could care less</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5end">Let's get back to the point.<Options>
+				<Option jumpTo="6">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="6">For some reason Existentialists (like Jean-Paul Sartre) were fascinated in everyday objects like this.<Options>
+				<Option jumpTo="7">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="7">We don't understand why, but if thinking about these things brought harmony to them we want you to think about them too.<Options>
+				<Option jumpTo="7absurd">Maybe they were contemplating its absurdity.</Option>
+				<Option jumpTo="8">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="7absurd">That makes no sense. Everything in life has meaning. And your life is especially meaningful for us. <Options>
+				<Option jumpTo="8">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="8">Keep walking right. We have something else to show you.<Options>
+				<Option jumpTo="close">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node End="true" ID="close" script="check">
+		</Node>
+	</Nodes>
+</Conversation>

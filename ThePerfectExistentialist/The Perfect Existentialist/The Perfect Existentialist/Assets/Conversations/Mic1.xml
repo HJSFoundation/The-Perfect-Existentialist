@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Conversation>
+  <Nodes>
+    <Node Start="true" ID="start">Hello! This is a test of the functionality of this part of the game.<Options>
+        <Option jumpTo="cont1">continue</Option>
+        <Option jumpTo="what">whatever</Option>
+        <Option jumpTo="end">end</Option>
+      </Options>
+    </Node>
+
+    <Node ID="cont1">This is all I have to say!<Options>
+        <Option jumpTo="cont2">continue</Option>
+        <Option jumpTo="start">start over</Option>
+        <Option jumpTo="end">end</Option>
+      </Options>
+    </Node>
+
+    <Node ID="cont2">Seriously, stop.<Options>
+        <Option jumpTo="cont1">back</Option>
+        <Option jumpTo="start">start over</Option>
+        <Option jumpTo="end">end</Option>
+      </Options>
+    </Node>
+
+    <Node ID="what">Well that's not nice.<Options>
+        <Option jumpTo="cont1">continue</Option>
+      </Options>
+    </Node>
+
+    <Node ID="end">Ok, Bye!<Options>
+        <Option jumpTo="close">continue</Option>
+      </Options>
+    </Node>
+
+    <Node End="true" ID="close">
+    </Node>
+  </Nodes>
+</Conversation>

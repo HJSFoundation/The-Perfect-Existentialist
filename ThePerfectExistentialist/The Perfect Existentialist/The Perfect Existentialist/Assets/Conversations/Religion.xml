@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Node attributes:
+ID: string identification of that node
+Start: boolean if is starting element
+End: boolean if is ending element
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+
+Option attribute:
+jumpTo: string of ID this option will jump to
+conditional: string for data to be checked if this option should be shown
+conditionalGreaterThan: int to be checked against if this option should be shown
+forceSelect: boolean if this option will be forcefully selected
+-->
+
+<Conversation>
+	<Nodes>
+		<Node Start="true" ID="start" freezePlayer="true">This is a wooden cross. It is made from exactly the same material as the bench except it is to be worshipped, not sat upon.<Options>
+				<Option jumpTo="1question" dataEdit="P" dataAddTo="1">And why is that?</Option>
+				<Option jumpTo="1pride" dataEdit="S" dataAddTo="1">That is foolish! I am above such nonsense.</Option>
+				<Option jumpTo="2" dataEdit="G" dataAddTo="1">Okay. I blindly agree.</Option>
+				<Option jumpTo="2" dataEdit="M" dataAddTo="1">This is all pointless.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="1question">We don't know. Why does it matter to you? Stop asking questions!<Options>
+				<Option jumpTo="2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="1pride">Your pride is unwarranted. That might serve you well if we were making you into the perfect Jane Austen character. But as it stands: a useless attitude.<Options>
+				<Option jumpTo="2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2">Anyway, what do you make of this "cross" business<Options>
+				<Option jumpTo="2symbol" dataEdit="P" dataAddTo="1">Is it symbolic of something more significant?</Option>
+				<Option jumpTo="3" dataEdit="S" dataAddTo="1">It is dumb and I will have no part in it.</Option>
+				<Option jumpTo="3" dataEdit="G" dataAddTo="1">It's magnificent and I will never question it!</Option>
+				<Option jumpTo="3" dataEdit="M" dataAddTo="1">I don't have an opinion one way or another. We're all going to die in the end aren't we?</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2symbol">Sure, let's go with that.<Options>
+				<Option jumpTo="3">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3">Whatever your opinion is, Existentialists would argue day and night about this thing, so it's important for some reason.<Options>
+				<Option jumpTo="4">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4">Keep walking right.<Options>
+				<Option jumpTo="close">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node End="true" ID="close" script="check">
+		</Node>
+	</Nodes>
+</Conversation>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Node attributes:
+ID: string identification of that node
+Start: boolean if is starting element
+End: boolean if is ending element
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+
+Option attribute:
+jumpTo: string of ID this option will jump to
+conditional: string for data to be checked if this option should be shown
+conditionalGreaterThan: int to be checked against if this option should be shown
+forceSelect: boolean if this option will be forcefully selected
+-->
+
+<Conversation>
+	<Nodes>
+		<Node Start="true" ID="start" freezePlayer="true">Ah, you've made it to the end.<Options>
+				<Option jumpTo="1">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="1">Before we tell you what you have to do last, we will use extremely sophisticated algorithms to decide what kind of existentialist you are.<Options>
+				<Option jumpTo="2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2">By our calculations, you are most like...<Options>
+				<Option jumpTo="invisibleCheck">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="invisibleCheck" script="comparator" hidden="true"><Options>
+			</Options>
+		</Node>
+		
+		<Node ID="2Meursault">Meursault.<Options>
+				<Option jumpTo="3M">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3M">At every point you chose apathy and nihilism over real substantive reflection.<Options>
+				<Option jumpTo="4deathM">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4deathM">And like Meursault, you will be killed thus completing the cycle and bringing harmony to the world.<Options>
+				<Option jumpTo="5death">Whatever</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2Gregor">Gregor Samsa.<Options>
+				<Option jumpTo="3G">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3G">You were completely submissive and chose to follow instruction rather than rebel.<Options>
+				<Option jumpTo="4deathG">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4deathG">And Like Gregor, you will die to bring harmony to everyone else in the world.<Options>
+				<Option jumpTo="5death">Absolutely</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5death">Now just step on the platform and end your life.<Options>
+				<Option jumpTo="close">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2Stephen">Stephen Dedalus.<Options>
+				<Option jumpTo="3S">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3S">You were proud and even arrogant at times. You learned to rebel against authority every chance you got.<Options>
+				<Option jumpTo="4deathS">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4deathS">And although Stephen doesn't die, all other existentialists did. You have to too.<Options>
+				<Option jumpTo="5deathS">No.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5deathS">What did you say?<Options>
+				<Option jumpTo="6deathS">I said No. I'm not going to die by your hand!</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="6deathS">...<Options>
+				<Option jumpTo="7deathS">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="7deathS">Who said you had a choice?<Options>
+				<Option jumpTo="8deathS">...</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="8deathS" script="death" hidden="true"><Options>
+			</Options>
+		</Node>
+		
+		<Node ID="2perfect">Well... this is awkward...<Options>
+				<Option jumpTo="invisibleCheck2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="invisibleCheck2" script="comparator2" hidden="true"><Options>
+			</Options>
+		</Node>
+		
+		<Node ID="2pMeursault">You seem to be most like Meursault. But there is something else...<Options>
+				<Option jumpTo="3perfect">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2pGregor">You seem to be most like Gregor Samsa. But there is something else...<Options>
+				<Option jumpTo="3perfect">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2pStephen">You seem to be most like Stephen Dedalus. But there is something else...<Options>
+				<Option jumpTo="3perfect">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3perfect">You simply don't fall into any of the categories we have to define the perfect existentialist. You are a failure! You'll never create harmony!<Options>
+				<Option jumpTo="4ask">And what, exactly, is your definition of a perfect existentialist?</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4ask">If you want to check our understanding of existentialism so bad, then fine!<Options>
+				<Option jumpTo="4definition">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4definition">Existentialism is broken into three parts, based on the three ancient novels we've meticulously studied.<Options>
+				<Option jumpTo="4def1">Okay.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4def1">First, existentialists are loyal to those who create them, like Gregor Samsa is loyal to his parents and boss.<Options>
+				<Option jumpTo="4def2">But doesn't Gregor let himself die for people who do not care about him?</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4def2">Second, existentialists are cynical and apathetic towards things they don't like, like Meursault who does not care about his mother at all.<Options>
+				<Option jumpTo="4def3">But isn't it his right to choose what is important to him? Who are we to judge?</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4def3">Thirdly, existentialists must be insistently proud of themselves, like Stephen Dedalus who arrogantly turns away everything to seek out his artistic passions.<Options>
+				<Option jumpTo="5perfect">But isn't Stephen lost in the end? Searching for a meaning to his life after he renounces all that he was taught?</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5perfect">No! No! NO! You're wrong and we're right! Accept that you are a failure so we can destroy you!<Options>
+				<Option jumpTo="6perfect">Your world is meaningless to me! I can make my own path and you can't stop me!</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="6perfect">But don't you want to make HARMONY! We made you what you are, insolent Slime. You owe us everything.<Options>
+				<Option jumpTo="7perfect">I have free-will. I can make my own choices. I owe you nothing!</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="7perfect">NO! Stop! Your free-will!! It's too strong!!!<Options>
+				<Option jumpTo="8perfect">Goodbye</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="8perfect" script="escape">Aaaaaaaaaaaah!!<Options>
+			</Options>
+		</Node>
+		
+		<Node End="true" ID="close" script="check">
+		</Node>
+	</Nodes>
+</Conversation>

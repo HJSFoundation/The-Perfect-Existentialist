@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Node attributes:
+ID: string identification of that node
+Start: boolean if is starting element
+End: boolean if is ending element
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+freezePlayer: boolean to tell start node to freeze player
+
+Option attribute:
+jumpTo: string of ID this option will jump to
+conditional: string for data to be checked if this option should be shown
+conditionalGreaterThan: int to be checked against if this option should be shown
+forceSelect: boolean if this option will be forcefully selected
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+
+-->
+<Conversation>
+  <Nodes>
+    <Node Start="true" ID="start" freezePlayer="true">[There is a cell phone on this table]<Options>
+        <Option jumpTo="pickup">Pick it up</Option>
+				<Option jumpTo="nothing">Do nothing</Option>
+      </Options>
+    </Node>
+		
+    <Node ID="pickup">[It springs to life!]<Options>
+        <Option jumpTo="pickup1">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="nothing">[Even though you didn't touch it, it springs to life]<Options>
+        <Option jumpTo="pickup1">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickup1">[A stranger with a vaguely European accent is speaking]<Options>
+        <Option jumpTo="pickup2">Continue</Option>
+      </Options>
+    </Node>
+    
+		<Node ID="pickup2">Hello young Slime! I'm sure you're wondering what your purpose in this life is!<Options>
+        <Option jumpTo="pickup3" dataEdit="P" dataAddTo="1">What is this place? Who are you?</Option>
+				<Option jumpTo="pickup3" dataEdit="S" dataAddTo="1">No. I'm better than to ask a random stranger for help!</Option>
+				<Option jumpTo="pickup3" dataEdit="G" dataAddTo="1">Yes! Please! Tell me anything! I'm scared!</Option>
+				<Option jumpTo="pickup3" dataEdit="M" dataAddTo="1">Whatever.</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickup3">You see, we created you to bring harmony to this world by BECOMING THE PERFECT EXISTENTIALIST.<Options>
+        <Option jumpTo="pickup4" dataEdit="P" dataAddTo="1">What is that?</Option>
+				<Option jumpTo="pickup4" dataEdit="S" dataAddTo="1">I don't know what that is but I refuse on principle.</Option>
+				<Option jumpTo="pickup4" dataEdit="G" dataAddTo="1">Sounds important.</Option>
+				<Option jumpTo="pickup4" dataEdit="M" dataAddTo="1">Whatever.</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickup4">We studied countless ancient tomes (a whole THREE NOVELS) to develop a step-by-step process to create harmony.<Options>
+        <Option jumpTo="pickup4.5">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickup4.5">We've even downloaded copies of these works into your mind so you can follow along.<Options>
+        <Option jumpTo="pickup5">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickup5">Just follow this guide exactly, answer all of our questions, and never stray from the path.<Options>
+        <Option jumpTo="pickup6" dataEdit="P" dataAddTo="1">What is this guide? Will it really help me?</Option>
+				<Option jumpTo="pickup6" dataEdit="S" dataAddTo="1">I'm better than you're silly guide. I'm better than everyone.</Option>
+				<Option jumpTo="pickup6" dataEdit="G" dataAddTo="1">Yes! I would never question your wisdom mysterious phone person.</Option>
+				<Option jumpTo="pickup6" dataEdit="M" dataAddTo="1">Yawn.</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickup6">Take this phone with you, keep walking right, and answer it every time it rings.<Options>
+        <Option jumpTo="pickupWhy" dataEdit="P" dataAddTo="1">Why?</Option>
+				<Option jumpTo="pickupNo" dataEdit="S" dataAddTo="1">No</Option>
+        <Option jumpTo="pickupEnd" dataEdit="G" dataAddTo="1">Absolutely</Option>
+			  <Option jumpTo="pickupEnd" dataEdit="M" dataAddTo="1">...</Option>
+			</Options>
+    </Node>
+		
+		<Node ID="pickupWhy">Because you have to.<Options>
+        <Option jumpTo="pickupEnd">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickupNo">You have to.<Options>
+        <Option jumpTo="pickupEnd">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="pickupEnd">*Click* [The phone is off]<Options>
+        <Option jumpTo="phone1">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="phone1">[Take the phone with you?]<Options>
+        <Option jumpTo="phone2">yes</Option>
+				<Option jumpTo="phone3">no</Option>
+				<Option jumpTo="phone4">...</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="phone1.5">[Take the phone with you?]<Options>
+        <Option jumpTo="phone2">yes</Option>
+				<Option jumpTo="phone3">no</Option>
+			</Options>
+    </Node>
+		
+		<Node ID="phone2">[You take the phone]<Options>
+        <Option jumpTo="close">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="phone3">[You have to]<Options>
+        <Option jumpTo="phone1.5">Continue</Option>
+      </Options>
+    </Node>
+		
+		<Node ID="phone4">[You have to answer some time]<Options>
+        <Option jumpTo="phone1.5">Continue</Option>
+      </Options>
+    </Node>
+		
+    <Node End="true" ID="close" script="check">
+    </Node>
+  </Nodes>
+</Conversation>

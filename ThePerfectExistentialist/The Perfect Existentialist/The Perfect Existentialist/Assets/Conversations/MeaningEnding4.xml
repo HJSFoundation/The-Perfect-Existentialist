@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Node attributes:
+ID: string identification of that node
+Start: boolean if is starting element
+End: boolean if is ending element
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+
+Option attribute:
+jumpTo: string of ID this option will jump to
+conditional: string for data to be checked if this option should be shown
+conditionalGreaterThan: int to be checked against if this option should be shown
+forceSelect: boolean if this option will be forcefully selected
+-->
+
+<Conversation>
+	<Nodes>
+		<Node Start="true" ID="start" freezePlayer="true">You recognized the meaninglessness of your world and instead chose to give the world your own meaning.<Options>
+				<Option jumpTo="1">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="1">Truly, you have BECOME THE PERFECT EXISTENTIALIST. Congratulations.<Options>
+		    <Option jumpTo="close" >Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="close" script="endGame" hidden="true">
+		</Node>
+	</Nodes>
+</Conversation>

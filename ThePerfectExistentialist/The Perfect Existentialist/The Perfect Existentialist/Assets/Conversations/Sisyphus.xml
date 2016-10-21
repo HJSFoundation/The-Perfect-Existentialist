@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Node attributes:
+ID: string identification of that node
+Start: boolean if is starting element
+End: boolean if is ending element
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+
+Option attribute:
+jumpTo: string of ID this option will jump to
+conditional: string for data to be checked if this option should be shown
+conditionalGreaterThan: int to be checked against if this option should be shown
+forceSelect: boolean if this option will be forcefully selected
+-->
+
+<Conversation>
+	<Nodes>
+		<Node Start="true" ID="start" freezePlayer="true">This is a rock rolled up and down a hill for eternity by a man named Sisyphus.<Options>
+				<Option jumpTo="2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2">According to an existentialist named Albert Camus, Sisyphus was very happy.<Options>
+				<Option jumpTo="2question" dataEdit="P" dataAddTo="1">But why was he happy?</Option>
+				<Option jumpTo="3" dataEdit="S" dataAddTo="1">That makes no sense.</Option>
+				<Option jumpTo="3" dataEdit="G" dataAddTo="1">That makes perfect sense.</Option>
+				<Option jumpTo="3" dataEdit="M" dataAddTo="1">*Yawn*</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2question">Something about free-will? Not that you would understand what that is yet.<Options>
+				<Option jumpTo="3">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3">It's important that you know he was happy doing the same thing over and over for eternity. That's where harmony is found.<Options>
+				<Option jumpTo="3question">I don't believe you.</Option>
+				<Option jumpTo="4">Obviously.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3question">It is true. We are certain of it.<Options>
+				<Option jumpTo="4">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4">Keep walking right.<Options>
+				<Option jumpTo="close">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node End="true" ID="close" script="check">
+		</Node>
+	</Nodes>
+</Conversation>

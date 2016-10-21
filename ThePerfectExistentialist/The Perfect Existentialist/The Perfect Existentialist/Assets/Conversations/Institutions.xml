@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Node attributes:
+ID: string identification of that node
+Start: boolean if is starting element
+End: boolean if is ending element
+dataEdit: string for data this node will edit
+dataSet: int for value this node will set data string to
+dataAddTo: int for how much this node will add to data value
+
+Option attribute:
+jumpTo: string of ID this option will jump to
+conditional: string for data to be checked if this option should be shown
+conditionalGreaterThan: int to be checked against if this option should be shown
+forceSelect: boolean if this option will be forcefully selected
+-->
+
+<Conversation>
+	<Nodes>
+		<Node Start="true" ID="start" freezePlayer="true">Finally, we get to talk about institutions.<Options>
+				<Option jumpTo="1">Continue</Option>
+				<Option jumpTo="1">Oh boy!</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="1">Essentially, institutions were things like government, schools, and everything else controlling lives through an incomprehensible hierarchy.<Options>
+				<Option jumpTo="2">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2">They sound pretty great to us, honestly. But Existentialists hated them so you have to as well.<Options>
+				<Option jumpTo="2question" dataEdit="P" dataAddTo="1">Aren't you basically an institution?</Option>
+				<Option jumpTo="3" dataEdit="S" dataAddTo="1">I blindly refuse to hate blindly.</Option>
+				<Option jumpTo="3" dataEdit="G" dataAddTo="1">Oh, yeah! Institutions are the worst.</Option>
+				<Option jumpTo="3" dataEdit="M" dataAddTo="1">*Shrug*</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="2question">Are you saying you want to have to hate US? that's rude. Show some filial piety!<Options>
+				<Option jumpTo="3">...</Option>
+				<Option jumpTo="3">Of course, my masters.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="3">Anyway, yeah. Being an existentialist means you HAVE to hate institutions.<Options>
+				<Option jumpTo="4">You keep using that word, I do not think that word means what you think it means.</Option>
+				<Option jumpTo="4">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4">Try to think of some reasons to hate institutions.<Options>
+				<Option jumpTo="4free" dataEdit="P" dataAddTo="1">Do they limit free-will?</Option>
+				<Option jumpTo="4boss" dataEdit="S" dataAddTo="1">They are not worthy of bossing ME around!</Option>
+				<Option jumpTo="4cant" dataEdit="G" dataAddTo="1">I can't think of a reason. I just love having others control my life.</Option>
+				<Option jumpTo="4dont" dataEdit="M" dataAddTo="1">I don't want to.</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4free">How would you know what free-will is? You shouldn't care about such things.<Options>
+				<Option jumpTo="5">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4boss">That's a good reason. Stick with that.<Options>
+				<Option jumpTo="5">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4cant">Fair enough. We couldn't think of a good reason either.<Options>
+				<Option jumpTo="5">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="4dont">You are such a pain to work with. But fine, have it your way.<Options>
+				<Option jumpTo="5">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node ID="5">That seems like everything you need to contemplate for now. Walk right and BECOME THE PERFECT EXISTENTIALIST!<Options>
+				<Option jumpTo="close">Continue</Option>
+			</Options>
+		</Node>
+		
+		<Node End="true" ID="close" script="check">
+		</Node>
+	</Nodes>
+</Conversation>
